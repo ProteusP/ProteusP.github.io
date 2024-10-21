@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дмитрий Михеев - CV программиста</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Default black background */
+            color: #fff; /* Default white text */
+            overflow: auto; /* Allow scrolling */
+        }
+        header {
+            background: #1a1a1a; /* Dark gray for header */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            position: relative; /* Position relative for button placement */
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background: rgba(30, 30, 30, 0.8); /* Semi-transparent dark background */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        h1, h2 {
+            margin: 0;
+            padding: 10px 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+        }
+        button {
+            position: absolute; /* Position button in the upper right corner */
+            top: 10px;
+            right: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            background: transparent; /* Transparent background */
+            color: inherit; /* Inherit color from the body */
+        }
+        /* Star background */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stars.png'); /* Star texture */
+            z-index: -1; /* Behind other content */
+            opacity: 0.5; /* Slightly transparent */
+        }
+    </style>
+</head>
+<body>
+
+<div class="stars"></div> <!-- Star background -->
+
+<header>
+    <h1>Дмитрий Михеев</h1>
+    <p>Начинающий программист C++</p>
+    <p>НИУ ВШЭ СПб - Прикладная математика и информатика</p>
+    <button id="theme-toggle">⭐</button> <!-- Star icon button -->
+</header>
+
+<section>
+    <h2>Обо мне</h2>
+    <p>
+        Я увлекаюсь программированием на C++, в настоящее время обучаюсь на образовательной программе "Прикладная математика и информатика" в НИУ ВШЭ СПб. 
+        Мне интересно заниматься разработкой ПО, проектированием алгоритмов и решением аналитических задач. 
+        Я стремлюсь применять свои навыки в реальных проектах и вносить вклад в инновационные решения.
+    </p>
+</section>
+
+<section>
+    <h2>Навыки</h2>
+    <ul>
+        <li>Программирование на C++</li>
+        <li>Понимание структур данных и алгоритмов</li>
+        <li>Веб-разработка (HTML, CSS, JavaScript)</li>
+        <li>Системы контроля версий (Git)</li>
+        <li>Базовые знания Python и библиотек для анализа данных</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Опыт</h2>
+    <ul>
+        <li>
+            Участвовал в Зимней школе по программной инженерии от НИУ ВШЭ СПб.
+        </li>
+        <li>
+            Изучал инструменты для анализа данных вместе с Yandex.
+        </li>
+        <li>
+            Имею опыт разработки на Django.
+        </li>
+        <li>
+            Внёс свой вклад в проекты с открытым исходным кодом на GitHub.
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2>Достижения</h2>
+    <ul>
+        <li>
+            Призовые места в олимпиадах по математике.
+        </li>
+        <li>
+            Успешный запуск коммерческих проектов на Django.
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2>Контакты</h2>
+    <p>Email: <a href="mailto:doremiheev@vk.com">doremiheev@vk.com</a></p>
+    <p>GitHub: <a href="https://github.com/ProteusP">github.com/ProteusP</a></p>
+</section>
+
+<script>
+    const themeToggleButton = document.getElementById('theme-toggle');
+    let isDarkTheme = true;
+
+    themeToggleButton.addEventListener('click', () => {
+        if (isDarkTheme) {
+            document.body.style.backgroundColor = '#f4f4f4'; // Light background
+            document.body.style.color = '#333'; // Dark text
+            document.querySelector('header').style.background = '#e0e0e0'; // Light header
+            document.querySelectorAll('section').forEach(section => {
+                section.style.background = 'rgba(255, 255, 255, 0.8)'; // Light section background
+            });
+            themeToggleButton.style.color = '#333'; // Dark button text
+        } else {
+            document.body.style.backgroundColor = '#000'; // Dark background
+            document.body.style.color = '#fff'; // Light text
+            document.querySelector('header').style.background = '#1a1a1a'; // Dark header
+            document.querySelectorAll('section').forEach(section => {
+                section.style.background = 'rgba(30, 30, 30, 0.8)'; // Dark section background
+            });
+            themeToggleButton.style.color = '#fff'; // Light button text
+        }
+        isDarkTheme = !isDarkTheme; // Toggle theme state
+    });
+</script>
+
+</body>
+</html>
